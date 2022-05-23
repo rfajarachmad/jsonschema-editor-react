@@ -23,7 +23,7 @@ export const JsonSchemaEditor = (props: SchemaEditorProps) => {
 	const jsonSchemaState = useState(schemaState.jsonSchema);
 
 	return (
-		<ChakraProvider theme={theme}>
+		<ChakraProvider resetCSS={false}>
 			{schemaState.isValidSchema ? (
 				<Flex m={2} direction="column">
 					<SchemaRoot
