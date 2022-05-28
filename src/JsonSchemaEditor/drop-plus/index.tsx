@@ -16,6 +16,7 @@ import {
 	JSONSchema7Definition,
 } from "../../JsonSchemaEditor.types";
 import { random } from "../utils";
+import { PlusCircle } from "react-feather";
 export interface DropPlusProps extends FlexProps {
 	itemStateProp: State<JSONSchema7>;
 	parentStateProp: State<JSONSchema7>;
@@ -50,7 +51,7 @@ export const DropPlus: React.FunctionComponent<DropPlusProps> = (
 	return (
 		<Popover trigger="hover">
 			<PopoverTrigger>
-				<IconButton
+				{/* <IconButton
 					isRound
 					size="sm"
 					mt={2}
@@ -61,7 +62,8 @@ export const DropPlus: React.FunctionComponent<DropPlusProps> = (
 					fontSize="16px"
 					icon={<IoIosAddCircleOutline />}
 					aria-label="Add Child Node"
-				/>
+				/> */}
+				<PlusCircle aria-label="Add Child Node" size={50} />
 			</PopoverTrigger>
 
 			<PopoverContent border="0" zIndex={4} width="100px" color="white">

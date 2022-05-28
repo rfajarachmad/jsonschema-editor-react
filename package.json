@@ -59,6 +59,7 @@
 		"@hookstate/core": "^3.0.7",
 		"framer-motion": "^4.0.0",
 		"ramda": "^0.27.1",
+		"react-feather": "^2.0.9",
 		"react-icons": "^3.0.0",
 		"typescript": "^3.9.5",
 		"use-debounce": "^6.0.1",

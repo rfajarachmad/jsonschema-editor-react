@@ -29,6 +29,7 @@ import {
 
 import { SchemaObject } from "../schema-object";
 import { AdvancedSettings } from "../schema-advanced";
+import { PlusCircle, Settings } from "react-feather";
 export interface SchemaArrayProps extends FlexProps {
 	schemaState: State<JSONSchema7>;
 	isReadOnly: State<boolean>;
@@ -125,13 +126,15 @@ export const SchemaArray: React.FunctionComponent<SchemaArrayProps> = (
 						state.description.set(evt.target.value);
 					}}
 				/>
-				<Tooltip
-					hasArrow
-					aria-label="Advanced Settings"
-					label="Advanced Settings"
-					placement="top"
-				>
-					<IconButton
+
+				{!isReadOnlyState.value && (
+					<Tooltip
+						hasArrow
+						aria-label="Advanced Settings"
+						label="Advanced Settings"
+						placement="top"
+					>
+						{/* <IconButton
 						isRound
 						isDisabled={isReadOnlyState.value}
 						size="sm"
@@ -146,17 +149,26 @@ export const SchemaArray: React.FunctionComponent<SchemaArrayProps> = (
 						onClick={() => {
 							showadvanced();
 						}}
-					/>
-				</Tooltip>
+					/> */}
+						<Settings
+							size={30}
+							fontSize="20px"
+							aria-label="Advanced Settings"
+							onClick={() => {
+								showadvanced();
+							}}
+						/>
+					</Tooltip>
+				)}
 
-				{state.type.value === "object" && (
+				{state.type.value === "object" && !isReadOnlyState.value && (
 					<Tooltip
 						hasArrow
 						aria-label="Add Child Node"
 						label="Add Child Node"
 						placement="top"
 					>
-						<IconButton
+						{/* <IconButton
 							isRound
 							isDisabled={isReadOnlyState.value}
 							size="sm"
@@ -170,6 +182,18 @@ export const SchemaArray: React.FunctionComponent<SchemaArrayProps> = (
 							aria-label="Add Child Node"
 							onClick={() => {
 								const fieldName = `field_${random()}`;
+								(state.properties as State<{
+									[key: string]: JSONSchema7;
+								}>)[fieldName].set(getDefaultSchema(DataType.string));
+							}}
+						/> */}
+						<PlusCircle
+							fontSize="20px"
+							aria-label="Add Child Node"
+							size={30}
+							onClick={() => {
+								//const fieldName = `field_${random()}`;
+								const fieldName = "";
 								(state.properties as State<{
 									[key: string]: JSONSchema7;
 								}>)[fieldName].set(getDefaultSchema(DataType.string));

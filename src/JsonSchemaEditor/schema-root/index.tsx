@@ -12,6 +12,7 @@ import { useState, State } from "@hookstate/core";
 import { JSONSchema7, JSONSchema7TypeName } from "../../JsonSchemaEditor.types";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { getDefaultSchema, DataType, random, handleTypeChange } from "../utils";
+import { PlusCircle } from "react-feather";
 export interface SchemaArrayProps extends FlexProps {
 	schemaState: State<JSONSchema7>;
 	onSchemaChange: (results: string) => void;
@@ -94,7 +95,7 @@ export const SchemaRoot: React.FunctionComponent<SchemaArrayProps> = (
 					}}
 				/> */}
 
-				{state.value?.type === "object" && (
+				{state.value?.type === "object" && !isReadOnlyState.value && (
 					<>
 						<Tooltip
 							hasArrow
@@ -102,7 +103,7 @@ export const SchemaRoot: React.FunctionComponent<SchemaArrayProps> = (
 							label="Add Child Node"
 							placement="top"
 						>
-							<IconButton
+							{/* <IconButton
 								//isRound
 								isDisabled={isReadOnlyState.value}
 								size="xs"
@@ -116,6 +117,16 @@ export const SchemaRoot: React.FunctionComponent<SchemaArrayProps> = (
 								aria-label="Add Child Node"
 								onClick={() => {
 									const fieldName = `field_${random()}`;
+									(state.properties as State<{
+										[key: string]: JSONSchema7;
+									}>)[fieldName].set(getDefaultSchema(DataType.string));
+								}}
+							/> */}
+							<PlusCircle
+								size={15}
+								onClick={() => {
+									//const fieldName = `field_${random()}`;
+									const fieldName = "";
 									(state.properties as State<{
 										[key: string]: JSONSchema7;
 									}>)[fieldName].set(getDefaultSchema(DataType.string));
