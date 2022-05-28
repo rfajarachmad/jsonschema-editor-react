@@ -34,7 +34,7 @@ export const SchemaRoot: React.FunctionComponent<SchemaArrayProps> = (
 				mt={2}
 				mr={5}
 			>
-				<Input isDisabled placeholder="root" margin={2} variant="outline" />
+				{/* <Input isDisabled placeholder="root" margin={2} variant="outline" /> */}
 				<Tooltip
 					hasArrow
 					aria-label="All Required"
@@ -71,7 +71,7 @@ export const SchemaRoot: React.FunctionComponent<SchemaArrayProps> = (
 						array
 					</option>
 				</Select>
-				<Input
+				{/* <Input
 					value={state.value?.title ?? ""}
 					isDisabled={isReadOnlyState.value}
 					size="sm"
@@ -81,8 +81,8 @@ export const SchemaRoot: React.FunctionComponent<SchemaArrayProps> = (
 					onChange={(evt: React.ChangeEvent<HTMLInputElement>) => {
 						state.title.set(evt.target.value);
 					}}
-				/>
-				<Input
+				/> */}
+				{/* <Input
 					value={state.value?.description ?? ""}
 					isDisabled={isReadOnlyState.value}
 					size="sm"
@@ -92,7 +92,7 @@ export const SchemaRoot: React.FunctionComponent<SchemaArrayProps> = (
 					onChange={(evt: React.ChangeEvent<HTMLInputElement>) => {
 						state.description.set(evt.target.value);
 					}}
-				/>
+				/> */}
 
 				{state.value?.type === "object" && (
 					<>
@@ -103,9 +103,9 @@ export const SchemaRoot: React.FunctionComponent<SchemaArrayProps> = (
 							placement="top"
 						>
 							<IconButton
-								isRound
+								//isRound
 								isDisabled={isReadOnlyState.value}
-								size="sm"
+								size="xs"
 								mt={2}
 								mb={2}
 								mr={2}

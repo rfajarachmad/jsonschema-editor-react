@@ -70,7 +70,7 @@ export const SchemaArray: React.FunctionComponent<SchemaArrayProps> = (
 				mr={5}
 				style={tagPaddingLeftStyle}
 			>
-				<Input
+				{/* <Input
 					key="Items"
 					isDisabled
 					value="Items"
@@ -78,7 +78,7 @@ export const SchemaArray: React.FunctionComponent<SchemaArrayProps> = (
 					flexShrink={1}
 					margin={2}
 					variant="outline"
-				/>
+				/> */}
 				<Checkbox isDisabled margin={2} colorScheme="blue" />
 				<Select
 					variant="outline"
@@ -103,7 +103,7 @@ export const SchemaArray: React.FunctionComponent<SchemaArrayProps> = (
 						);
 					})}
 				</Select>
-				<Input
+				{/* <Input
 					value={state.title.value}
 					isDisabled={isReadOnlyState.value}
 					size="sm"
@@ -113,7 +113,7 @@ export const SchemaArray: React.FunctionComponent<SchemaArrayProps> = (
 					onChange={(evt: React.ChangeEvent<HTMLInputElement>) => {
 						state.title.set(evt.target.value);
 					}}
-				/>
+				/> */}
 				<Input
 					value={state.description.value}
 					isDisabled={isReadOnlyState.value}

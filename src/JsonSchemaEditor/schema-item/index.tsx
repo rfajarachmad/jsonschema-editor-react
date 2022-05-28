@@ -124,7 +124,7 @@ export const SchemaItem: React.FunctionComponent<SchemaItemProps> = (
 			>
 				<Input
 					isDisabled={isReadOnlyState.value}
-					defaultValue={nameState.value}
+					//defaultValue={nameState.value}
 					size="sm"
 					margin={2}
 					variant="outline"
@@ -171,7 +171,7 @@ export const SchemaItem: React.FunctionComponent<SchemaItemProps> = (
 						);
 					})}
 				</Select>
-				<Input
+				{/* <Input
 					isDisabled={isReadOnlyState.value}
 					value={itemState.title.value || ""}
 					size="sm"
@@ -181,7 +181,7 @@ export const SchemaItem: React.FunctionComponent<SchemaItemProps> = (
 					onChange={(evt: React.ChangeEvent<HTMLInputElement>) => {
 						itemState.title.set(evt.target.value);
 					}}
-				/>
+				/> */}
 				<Input
 					isDisabled={isReadOnlyState.value}
 					value={itemState.description.value || ""}
